@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1000 Times Sorry ❤️</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ff758c, #ff7eb3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+        }
+
+        .container {
+            width: 95%;
+            max-width: 1000px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 25px;
+            padding: 35px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            color: #ff3864;
+            margin-bottom: 10px;
+        }
+
+        .message {
+            color: #555;
+            margin-bottom: 25px;
+            font-size: 18px;
+        }
+
+        #sorryBox {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 10px;
+            max-height: 500px;
+            overflow-y: auto;
+            padding: 15px;
+        }
+
+        .sorry {
+            background: #fff0f4;
+            color: #ff3864;
+            padding: 12px;
+            border-radius: 12px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .sorry:hover {
+            transform: scale(1.08);
+            background: #ff3864;
+            color: white;
+        }
+
+        button {
+            border: none;
+            background: #ff3864;
+            color: white;
+            padding: 14px 30px;
+            border-radius: 30px;
+            font-size: 17px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
+        button:hover {
+            background: #e52d55;
+            transform: scale(1.05);
+        }
+
+        #counter {
+            color: #777;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>I'm Really Sorry ❤️</h1>
+
+        <p class="message">
+            Sometimes one "sorry" isn't enough...
+        </p>
+
+        <button onclick="showSorry()">
+            Show My 1000 Sorry ❤️
+        </button>
+
+        <div id="counter"></div>
+
+        <div id="sorryBox"></div>
+
+    </div>
+
+    <script>
+
+        function showSorry() {
+
+            const box = document.getElementById("sorryBox");
+            const counter = document.getElementById("counter");
+
+            box.innerHTML = "";
+
+            for (let i = 1; i <= 1000; i++) {
+
+                const sorry = document.createElement("div");
+
+                sorry.className = "sorry";
+
+                sorry.innerHTML = `Sorry ❤️ #${i}`;
+
+                box.appendChild(sorry);
+            }
+
+            counter.innerHTML = "Sorry × 1000 ❤️";
+
+        }
+
+    </script>
+
+</body>
+</html>
